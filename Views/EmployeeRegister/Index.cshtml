@@ -1,0 +1,85 @@
+﻿@model AfriEnergy_ST10146835.Models.User
+
+@{
+    ViewData["Title"] = "Register Users";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"]</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            padding-top: 50px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        .btn-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label asp-for="Username"></label>
+                <input asp-for="Username" class="form-control" placeholder="Username" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="UserPassword"></label>
+                <input asp-for="UserPassword" type="password" class="form-control" placeholder="Password" />
+                <span asp-validation-for="UserPassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="ConfirmPassword">Confirm Password</label>
+                <input name="Password" type="password" class="form-control" placeholder="Confirm Password" />
+                <span class="text-danger"></span>
+            </div>
+
+            <!-- Other form elements omitted for brevity -->
+
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+
+            <div>
+                <a asp-controller="EmployeeDashboard" asp-action="Index" class="btn btn-link">Go back to Dashboard</a>
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿@model AfriEnergy_ST10146835.Models.User
+
+@{
+    ViewData["Title"] = "Employee Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"]</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .btn-group {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Employee Dashboard</h2>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "EmployeeRegister")'">Add New User</button>
+            <button type="button" class="btn btn-secondary" onclick="location.href='@Url.Action("Index", "ViewListing")'">View List</button>
+        </div>
+    </div>
+</body>
+</html>
