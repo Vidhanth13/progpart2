@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\AfriEnergy_ST10146835.props" />
+</Project>
